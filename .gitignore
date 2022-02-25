@@ -42,3 +42,5 @@ captures/
 app/libs/
 app/src/main/res/drawable/
 easypay/src/main/res/drawable/
+publish-mavencentral.gradle
+secring.gpg

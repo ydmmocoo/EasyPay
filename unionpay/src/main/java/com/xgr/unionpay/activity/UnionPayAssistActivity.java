@@ -2,8 +2,9 @@ package com.xgr.unionpay.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.xgr.unionpay.unionpay.UnionPay;
 import com.xgr.unionpay.unionpay.UnionPayInfoImpli;

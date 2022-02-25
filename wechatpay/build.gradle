@@ -1,28 +1,15 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
-allprojects {
-    repositories {
-        jcenter()
-    }
-    //加上这些
-    tasks.withType(Javadoc) {
-        options{ encoding "UTF-8"
-            charSet 'UTF-8'
-            links "http://docs.oracle.com/javase/7/docs/api"
-        }
-    }
-}
+
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion 30
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 28
+        minSdkVersion 21
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
     buildTypes {
@@ -33,22 +20,16 @@ android {
     }
 }
 
-publish {
-    userOrg = 'kingofglory'      //bintray注册的用户名
-    groupId = 'com.xgr.easypay'         //compile引用时的第1部分groupId
-    artifactId = 'wechatpay'     //compile引用时的第2部分项目名
-    publishVersion = '2.0.5'    //compile引用时的第3部分版本号
-    desc = 'This is a library for Developers easily to use Alipay,WechatPay and UnionPay in Android project.'
-    website = 'https://www.smilevenus.com'
+ext {
+    PUBLISH_ARTIFACT_ID = "wechatpay" //你的artifact_id，一般是module的名字
+    PUBLISH_VERSION = "1.0.1"  //发布版本号
+    PUBLISH_GROUP_ID = 'io.github.ydmmocoo'  //你的sonatype的group_id
 }
+apply from: '../publish-mavencentral.gradle'
 
 dependencies {
-    api fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    api 'com.android.support:appcompat-v7:28.0.0'
-    testImplementation 'junit:junit:4.12'
-    api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.4.0'
+    api 'androidx.appcompat:appcompat:1.3.1'
+    testImplementation 'junit:junit:4.13.2'
+    api 'com.tencent.mm.opensdk:wechat-sdk-android:6.8.0'
     compileOnly project(':easypay')
 }
