@@ -278,7 +278,7 @@ public class XXPay implements IPayStrategy<XXpayInfoImpli> {
 
 ## (ChangeLog) 更新日志
 
-#### v1.0.1 更新 （2022/02/25)
+#### v2.0.6 更新 （2022/02/25)
 1. 迁移到Maven Central、AndroidX
 2. 更换引入的支付宝、微信包
 

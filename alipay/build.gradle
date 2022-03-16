@@ -19,16 +19,16 @@ android {
         }
     }
 
-    repositories {
-        flatDir {
-            dirs 'libs'
+    sourceSets{
+        main{
+            jniLibs.srcDirs = ['libs']
         }
     }
 }
 
 ext {
     PUBLISH_ARTIFACT_ID = "alipay" //你的artifact_id，一般是module的名字
-    PUBLISH_VERSION = "1.0.1"  //发布版本号
+    PUBLISH_VERSION = "2.0.6"  //发布版本号
     PUBLISH_GROUP_ID = 'io.github.ydmmocoo'  //你的sonatype的group_id
 }
 apply from: '../publish-mavencentral.gradle'
