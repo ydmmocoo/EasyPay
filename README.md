@@ -65,10 +65,10 @@ This is a library for Android Developers easily to use Alipay, WechatPay and Uni
 在 Project中主 App 模块中的 build.gradle 的dependencies 块中添加以下依赖。EasyPay 基类库为**必选**， wxchatpay, alipay, unionpay根据业务需要自行选择接入。
 
 ```java
-implementation 'io.github.ydmmocoo:easypay:1.0.1'   // 基类库，必选
-implementation 'io.github.ydmmocoo:wechatpay:1.0.1' // 微信支付，可选
-implementation 'io.github.ydmmocoo:alipay:1.0.1'    // 支付宝支付，可选
-implementation 'io.github.ydmmocoo:unionpay:1.0.1'  // 银联支付，可选
+implementation 'io.github.ydmmocoo:easypay:2.0.7'   // 基类库，必选
+implementation 'io.github.ydmmocoo:wechatpay:2.0.7' // 微信支付，可选
+implementation 'io.github.ydmmocoo:alipay:2.0.7'    // 支付宝支付，可选
+implementation 'io.github.ydmmocoo:unionpay:2.0.7'  // 银联支付，可选
 ```
 
 jcenter 集成方式到此结束。
