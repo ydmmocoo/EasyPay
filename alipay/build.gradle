@@ -1,13 +1,11 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 32
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        targetSdkVersion 32
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -18,24 +16,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-    sourceSets{
-        main{
-            jniLibs.srcDirs = ['libs']
-        }
-    }
+    namespace 'com.xgr.alipay'
 }
 
 ext {
     PUBLISH_ARTIFACT_ID = "alipay" //你的artifact_id，一般是module的名字
-    PUBLISH_VERSION = "2.0.6"  //发布版本号
+    PUBLISH_VERSION = "2.0.7"  //发布版本号
     PUBLISH_GROUP_ID = 'io.github.ydmmocoo'  //你的sonatype的group_id
 }
 apply from: '../publish-mavencentral.gradle'
 
 dependencies {
-    api 'androidx.appcompat:appcompat:1.3.1'
+    api 'androidx.appcompat:appcompat:1.4.1'
     testImplementation 'junit:junit:4.13.2'
-    compileOnly files('libs/alipaysdk-noutdid-15.8.03.210428205839.aar')
+    //https://opendocs.alipay.com/open/54/104509
+    api 'com.alipay.sdk:alipaysdk-android:15.8.10@aar'
     compileOnly project(':easypay')
 }
